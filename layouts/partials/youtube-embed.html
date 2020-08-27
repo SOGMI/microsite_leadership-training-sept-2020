@@ -1,0 +1,57 @@
+{{ $videoUrl := urls.Parse . }}
+
+{{ if in $videoUrl.Host "youtube.com" }}
+    {{ $videoId := $videoUrl.Query.v }}
+    {{ $videoIdString := replace (replace (print $videoId) "[" "") "]" "" }}
+    <div class="columns is-variable is-0">
+        <div class="column is-two-thirds" style="padding-top: 0; padding-bottom: 0">
+            <figure class="image is-16by9">
+                <iframe 
+                    width="560"
+                    height="315" 
+                    src="https://www.youtube.com/embed/{{ $videoIdString }}?controls=1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </figure>
+        </div>
+        <div class="column" style="padding-top: 0; padding-bottom: 0">
+            <iframe 
+                class="live-chat is-hidden-mobile" 
+                width="100%" 
+                height="auto" 
+                src="https://www.youtube.com/live_chat?v={{ $videoIdString }}&embed_domain=prophetic-school-2020.sogmi.org" 
+                frameborder="0">
+            </iframe>
+            <a href="{{ . }}" target="_blank" style="border-radius: 0" class="button is-medium is-info is-fullwidth is-hidden-tablet-only is-hidden-desktop-only is-hidden-widescreen-only is-hidden-fullhd">Join the live chat on Youtube</a>
+        </div>
+    </div>
+{{ else if in $videoUrl.Host "youtu.be" }}
+    {{ $videoId := replace $videoUrl.Path "/" "" }}
+    {{ $videoIdString := replace (replace (print $videoId) "[" "") "]" "" }}
+    <div class="columns is-variable is-0">
+        <div class="column is-two-thirds" style="padding-top: 0; padding-bottom: 0">
+            <figure class="image is-16by9">
+                <iframe 
+                    width="560"
+                    height="315" 
+                    src="https://www.youtube.com/embed/{{ $videoIdString }}?controls=1"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </figure>
+        </div>
+        <div class="column" style="padding-top: 0; padding-bottom: 0">
+            <iframe 
+                class="live-chat is-hidden-mobile" 
+                width="100%" 
+                height="auto" 
+                src="https://www.youtube.com/live_chat?v={{ $videoIdString }}&embed_domain=prophetic-school-2020.sogmi.org" 
+                frameborder="0">
+            </iframe>
+            <a href="{{ . }}" target="_blank" style="border-radius: 0" class="button is-medium is-info is-fullwidth is-hidden-tablet-only is-hidden-desktop-only is-hidden-widescreen-only is-hidden-fullhd">Join the live chat on Youtube</a>
+        </div>
+    </div>
+{{ end }}
