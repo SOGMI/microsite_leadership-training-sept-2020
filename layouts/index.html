@@ -1,7 +1,9 @@
 {{ define "main" }}
 <main id="main-content">
 	<section class="hero is-relative is-light is-bold is-medium has-background-image">
-		<div class="image-overlay" style="background-image: url(https://images.ctfassets.net/vfgh62eq5a4k/RWUg9gUusab2o9y26gFSS/06648a0e7b00390812c4c4d984562eaf/online_prophetic_school_thumb.jpg)"></div>
+		<div 
+			class="image-overlay" 
+			style="background-image: url({{ .Params.cover_image }})"></div>
 		<div class="hero-body">
 			<div class="container has-text-centered">
 				<div class="field">
