@@ -1,49 +1,56 @@
 {{ define "main" }}
 <main id="main-content">
-	<section class="hero is-relative is-light is-bold is-medium has-background-image">
-		<div 
-			class="image-overlay" 
-			style="background-image: url({{ .Params.cover_image }})"></div>
+	<section
+		class="hero is-relative is-light is-bold is-medium has-background-image"
+	>
+		<div
+			class="image-overlay"
+			style="background-image: url({{ .Params.cover_image }})"
+		></div>
 		<div class="hero-body">
 			<div class="container has-text-centered">
 				<div class="field">
 					<figure>
-						<img src="https://images.ctfassets.net/vfgh62eq5a4k/5SPbzorfOguiSYUAsEu4aw/b03106ded09c4ac6e60e259d85582267/SOGMI_LOGO_-_website_black_text-01b.png?w=200" alt="">
+						<img
+							src="https://images.ctfassets.net/vfgh62eq5a4k/5SPbzorfOguiSYUAsEu4aw/b03106ded09c4ac6e60e259d85582267/SOGMI_LOGO_-_website_black_text-01b.png?w=200"
+							alt=""
+						/>
 					</figure>
 				</div>
-				<h1 class="title">
-					{{ .Title }}
-				</h1>
-				<div class="subtitle">
-					{{ .Params.subtitle }}
-				</div>
+				<h1 class="title">{{ .Title }}</h1>
+				<div class="subtitle">{{ .Params.subtitle }}</div>
 			</div>
 		</div>
 	</section>
 	{{ range .Params.sections }}
-		<section class="section">
-			<div class="container">
-				{{ with .title }}
-					<h2 class="title">{{ . }}</h2>
-				{{ end }}
-				{{ with .subtitle }}
-					<div class="subtitle">Starts April 16, 2020 at 7:00 PM CST</div>
-				{{ end }}
-				{{ $downloadUrl := .downloadUrl }}
-				{{ with .videoUrl }}
-					<div class="field" style="margin-bottom: 2.5rem">
-						<div class="buttons">
-							<a href="{{ . }}" target="_blank" class="button is-small is-primary">Watch On Youtube</a>
-							{{ with $downloadUrl }}
-							<a href="{{ . }}" target="_blank" class="button is-small is-dark">Download This Video</a>
-							{{ end }}
-						</div>
-					</div>
-					{{ partial "youtube-embed" . }}
-				{{ end }}
-			</div>		
-		</section>
-	{{ end }} 
+	<section class="section">
+		<div class="container">
+			{{ with .title }}
+			<h2 class="title">{{ . }}</h2>
+			{{ end }} {{ with .subtitle }}
+			<div class="subtitle">{{ . }}</div>
+			{{ end }} {{ $downloadUrl := .downloadUrl }} {{ with .videoUrl }}
+			<div class="field" style="margin-bottom: 2.5rem">
+				<div class="buttons">
+					<a
+						href="{{ . }}"
+						target="_blank"
+						class="button is-small is-primary"
+						>Watch On Youtube</a
+					>
+					{{ with $downloadUrl }}
+					<a
+						href="{{ . }}"
+						target="_blank"
+						class="button is-small is-dark"
+						>Download This Video</a
+					>
+					{{ end }}
+				</div>
+			</div>
+			{{ partial "youtube-embed" . }} {{ end }}
+		</div>
+	</section>
+	{{ end }}
 </main>
-	{{ partial "loginform" . }}
-{{ end }}
+{{ partial "loginform" . }} {{ end }}
