@@ -14,4 +14,8 @@ sections:
     subtitle: Starts September 12, 2020 at 10:00 AM CST
     videoUrl: https://youtu.be/L16Gx6RcLTw
     downloadUrl:
+  - title: Follow Up Session
+    subtitle: Starts September 27, 2020 at 7:30 PM CST
+    videoUrl: https://www.youtube.com/watch?v=bzDfMBp2eCo
+    downloadUrl:
 ---
