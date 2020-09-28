@@ -2,7 +2,7 @@
   "_args": [
     [
       "bulma@0.8.2",
-      "D:\\Modii\\Clients\\SOGMI\\Websites\\microsite_prophetic-school-april-2020"
+      "C:\\Users\\joshm\\Documents\\SOGMI\\Website\\microsite_leadership-training-sept-2020"
     ]
   ],
   "_from": "bulma@0.8.2",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/bulma/-/bulma-0.8.2.tgz",
   "_spec": "0.8.2",
-  "_where": "D:\\Modii\\Clients\\SOGMI\\Websites\\microsite_prophetic-school-april-2020",
+  "_where": "C:\\Users\\joshm\\Documents\\SOGMI\\Website\\microsite_leadership-training-sept-2020",
   "author": {
     "name": "Jeremy Thomas",
     "email": "bbxdesign@gmail.com",
